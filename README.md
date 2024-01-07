@@ -5,7 +5,7 @@ Game Discount Finder is an open-source tool to scrape game discount information 
 
 ## Installation
 ```bash
-git clone https://github.com/similato87/game-discount-finder.git
+git clone https://github.com/similato87/GameDiscountFinder.git
 cd game-discount-finder
 pip install -r requirements.txt
 ```
