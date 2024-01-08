@@ -1,12 +1,21 @@
-# data_handler.py
-def save_data(data):
-    """
-    Save the data to a database or file.
-    """
-    pass
+import pandas as pd
 
-def load_data():
+
+def save_data(data, source):
     """
-    Load data from a database or file.
+    Saves the discount data to a file.
     """
-    pass
+    df = pd.DataFrame(data)
+    df.to_csv(f'{source}_discounts.csv', index=False)
+
+
+def load_data(source):
+    """
+    Loads the discount data from a file.
+    """
+    try:
+        df = pd.read_csv(f'{source}_discounts.csv')
+        return df
+    except FileNotFoundError:
+        print(f'No data file found for {source}.')
+        return pd.DataFrame()
